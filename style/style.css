@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+  }
+
+  #field {
+    margin: auto;
+  }
+  
+  #field tr td{
+    border:1px solid rgb(236, 235, 235);
+    background: #ffffff;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+  }
+  
+  #field tr td.clicked {
+      background: #e2e2e2;
+  }
+  
+  #field tr td.mine {
+      background: #FF0000;
+  }
+  
