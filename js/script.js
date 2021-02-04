@@ -41,17 +41,19 @@ function revealMines() {
 }
 
 function checkEndGame() {
-  let levelComplete = true;
+  let isFull = true;
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
       if ((field.rows[i].cells[j].getAttribute("isMine") == "false") && (field.rows[i].cells[j].innerHTML == "")) {
-        levelComplete = false;
+        isFull = false;
       }
     }
   }
-  if (levelComplete) {
+  if (isFull) {
     alert("win!");
     revealMines();
+
+    setTimeout(generateField, 2000);
   }
 }
 
@@ -59,6 +61,7 @@ function clickCell(cell) {
   if (cell.getAttribute("isMine") == "true") {
     revealMines();
     alert("lose");
+    setTimeout(generateField, 2000);
   } else {
     cell.className = "clicked";
 
